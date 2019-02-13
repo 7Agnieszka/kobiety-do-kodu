@@ -37,26 +37,21 @@ public class Interfejs {
         LocalDate d = null;
 
         obiekt.komunikuj("Podaj imie kota");
-        imie = sc.nextLine();
+        imie = sc.next();
         obiekt.komunikuj("Podaj imie opiekuna kota");
-        opiekun = sc.nextLine();
+        opiekun = sc.next();
       
-         do{
-    	   obiekt.komunikuj("Podaj wage kota");
-    	   try {
-            waga = sc.nextFloat();
-            }  
-    	   catch (InputMismatchException e) 
-    	   {
-            System.out.println("Nie liczba");
+        do {
+        	obiekt.komunikuj("Podaj wage kota");
+            try {
+                waga = sc.nextFloat();
+            } 
+            catch (InputMismatchException e) {
+                System.out.println("Nie liczba");
             }
-    	 }while(waga == 0);
-        
-       
-
-       
+           }while(waga == 0);     
         obiekt.komunikuj("Podaj date urodzenia");
-        datka = sc.nextLine();
+        datka = sc.next();
         try {
             d = LocalDate.parse(datka, DateTimeFormatter.ofPattern("yyyy.MM.dd"));
         } catch (DateTimeParseException ex) {
