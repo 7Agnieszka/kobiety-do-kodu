@@ -3,12 +3,14 @@ package mojProjekt;
 import java.time.LocalDate;
 
 
+
 public class Koty {
 
     String imie;
     Float waga;
     LocalDate data;
     String imieOpiekuna;
+
 
     public void przedstawSie() {
         System.out.println("Mam na imiê " + imie + " miau!");
@@ -49,6 +51,8 @@ public class Koty {
     public void setImieOpiekuna(String imieOpiekuna) {
         this.imieOpiekuna = imieOpiekuna;
     }
+
+
 
     /*public static void main( String[] args)
 
