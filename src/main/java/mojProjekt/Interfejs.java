@@ -48,71 +48,26 @@ public class Interfejs {
             catch (NumberFormatException e) {
                 System.out.println("Nie liczba");
             }
-           }while(waga == 0);     
+           }while(waga == 0);  
+        
+        do {
         obiekt.komunikuj("Podaj date urodzenia");
         datka = sc.nextLine();
         try {
             d = LocalDate.parse(datka, DateTimeFormatter.ofPattern("yyyy.MM.dd"));
         } catch (DateTimeParseException ex) {
             System.out.println("Cos jest nie tak z formatem daty! ");
-        }
+        }}while(d == null);
        
-       // System.out.println(d);
+
 
         obiekt.przedstawSie(imie, opiekun, waga, d);
-        
-        //kot.setData(d);
-//        kot.przedstawSie();
+
         sc.close();
     }
-    
-   // public static String getUserInput() {
-  //      return sc.nextLine().trim();
-    //}
+
     
 }
 
 
 
-/*
-public class Interfejs {
-
-    static Scanner sc = new Scanner(System.in);
-
-    public static void main(String[] args) {
-        Koty kot = new Koty();
-
-        System.out.print("Podaj imiê kota: ");
-        kot.setImie(getUserInput());
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
-        do {
-            System.out.print("Podaj datê urodzenia kota w formacie RRRR.MM.DD: ");
-            try {
-                kot.setDataUrodzenia(sdf.parse(getUserInput()));
-            } catch (ParseException pe) {
-                System.out.println("Coœ jest nie tak z formatem daty! Przyk³adowa data: 2014.01.05");
-            }
-        } while (kot.getDataUrodzenia() == null);
-
-        do {
-            System.out.print("Podaj wagê kota: ");
-            try {
-                kot.setWaga(Float.valueOf(getUserInput()));
-            } catch (NumberFormatException nfe) {
-                System.out.println("Coœ jest nie tak z formatem wagi! Przyk³adowa waga: 10.0");
-            }
-        } while (kot.getWaga() == null);
-
-        System.out.print("Podaj kto jest opiekunem kota: ");
-        kot.setImieOpiekuna(getUserInput());
-
-        System.out.println("Dziêkujê, teraz wiem o kocie naprawdê wszystko!");
-    }
-
-    public static String getUserInput() {
-        return sc.nextLine().trim();
-    }
-
-}
-*/
