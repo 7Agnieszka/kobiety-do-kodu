@@ -6,7 +6,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import mojProjekt.Koty;
 
-
 public class Interfejs {
 
     public void komunikuj(String napis) {
@@ -54,10 +53,12 @@ public class Interfejs {
         obiekt.komunikuj("Podaj date urodzenia");
         datka = sc.nextLine();
         try {
-            d = LocalDate.parse(datka, DateTimeFormatter.ofPattern("yyyy.MM.dd"));
+        	d = LocalDate.parse(datka, DateTimeFormatter.ofPattern("yyyy.MM.dd"));
         } catch (DateTimeParseException ex) {
             System.out.println("Cos jest nie tak z formatem daty! ");
-        }}while(d == null);
+        }
+        }
+        while(d == null);
        
 
 
@@ -65,9 +66,14 @@ public class Interfejs {
 
         sc.close();
     }
+    
+    
+    public static LocalDate zamienDate(String datka) throws DateTimeParseException
+    {
+    	if(datka == null || datka.equals(""))
+    		return LocalDate.MIN;
+    	return LocalDate.parse(datka, DateTimeFormatter.ofPattern("yyyy.MM.dd"));
+    }
 
     
 }
-
-
-
