@@ -22,4 +22,21 @@ public class KotDAO {
 	
 	listaKoty.add(kot);
 	}
+	
+	
+	public void wypiszListe() {
+		
+		for(Koty k : listaKoty)
+		{
+			System.out.println(listaKoty.indexOf(k) + ". " + k.getImie() );
+		}
+		
+	}
+	
+	public void przedstaw(int i) {
+		listaKoty.get(i).przedstawSie();
+		
+	}
+	
+	
 }
