@@ -17,11 +17,13 @@ public class Interfejs {
     public void przedstawSie(String imie, String opiekun, float waga, LocalDate data)
     {
         Koty kot = new Koty();
+        KotDAO lista = new KotDAO();
         kot.setImie(imie);
         kot.setImieOpiekuna(opiekun);
         kot.setWaga(waga);
         kot.setData(data);
         kot.przedstawSie();
+        lista.dodajKota(kot);
     }
 
     public static void main(String[] args) {
@@ -33,7 +35,31 @@ public class Interfejs {
         String imie, opiekun, datka;
         float waga=0;
         LocalDate d = null;
+        
+        
 
+        String w="0";
+        
+        while(true)
+        {
+        
+        	
+        	
+        System.out.println("Witaj w naszej bazie kotów!");
+        System.out.println("Wybierz opcjê:");
+        System.out.println("1 Dodaj kota");
+        System.out.println("2 Wybierz kota z listy");
+        System.out.println("x zakoñcz program");
+        
+        w=sc.next();
+        
+        
+        
+        
+        
+        
+        
+     if(w.equals("1")) {   
         obiekt.komunikuj("Podaj imie kota");
         imie = sc.nextLine();
         obiekt.komunikuj("Podaj imie opiekuna kota");
@@ -64,7 +90,25 @@ public class Interfejs {
 
         obiekt.przedstawSie(imie, opiekun, waga, d);
 
-        sc.close();
+        }
+     
+     else if(w.equals("2"))
+     {
+    	 
+     }
+     
+     else if(w.equals("x")) break;
+     
+     else System.out.println("Nie ma takiej opcji");
+     
+     }
+        
+        
+     System.out.println("Dziêki za skorzystanie z programu!");   
+        
+     sc.close();
+        
+        
     }
     
     
@@ -73,6 +117,12 @@ public class Interfejs {
     	if(datka == null || datka.equals(""))
     		return LocalDate.MIN;
     	return LocalDate.parse(datka, DateTimeFormatter.ofPattern("yyyy.MM.dd"));
+    }
+    
+    
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     
