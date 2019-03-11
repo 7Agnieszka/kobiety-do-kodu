@@ -26,9 +26,9 @@ public class KotDAO {
 	
 	public void wypiszListe() {
 		
-		for(Koty k : listaKoty)
+		for(int i = 0; i< listaKoty.size(); i++ )
 		{
-			System.out.println(listaKoty.indexOf(k) + ". " + k.getImie() );
+			System.out.println(i + ". " + listaKoty.get(i).getImie() );
 		}
 		
 	}

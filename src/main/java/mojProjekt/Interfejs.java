@@ -12,8 +12,8 @@ public class Interfejs {
 		System.out.println(napis);
 	}
 
-	public void przedstawSie(String imie, String opiekun, float waga, LocalDate data) {
-		Koty kot = new Koty();
+	/*public void przedstawSie(String imie, String opiekun, float waga, LocalDate data) {
+		//Koty kot = new Koty();
 		
 		kot.setImie(imie);
 		kot.setImieOpiekuna(opiekun);
@@ -21,11 +21,11 @@ public class Interfejs {
 		kot.setData(data);
 		kot.przedstawSie();
 		
-	}
+	}*/
 
 	public static void main(String[] args) {
 		
-		Koty kot = new Koty();
+		//Koty kot = new Koty();
 		KotDAO lista = new KotDAO();
 		Interfejs obiekt = new Interfejs();
 		Scanner sc = new Scanner(System.in, "UTF-8");
@@ -36,7 +36,7 @@ public class Interfejs {
 		String w = "0";
 
 		while (true) {
-
+			
 			System.out.println("Witaj w naszej bazie kotów!");
 			System.out.println("Wybierz opcjê:");
 			System.out.println("1 Dodaj kota");
@@ -46,6 +46,7 @@ public class Interfejs {
 			w = sc.nextLine();
 
 			if (w.equals("1")) {
+				Koty kot1 = new Koty();
 				obiekt.komunikuj("Podaj imie kota");
 				imie = sc.nextLine();
 				obiekt.komunikuj("Podaj imie opiekuna kota");
@@ -72,13 +73,13 @@ public class Interfejs {
 
 				//obiekt.przedstawSie(imie, opiekun, waga, d);
 				
-				kot.setImie(imie);
-				kot.setImieOpiekuna(opiekun);
-				kot.setWaga(waga);
-				kot.setData(d);
-				kot.przedstawSie();
+				kot1.setImie(imie);
+				kot1.setImieOpiekuna(opiekun);
+				kot1.setWaga(waga);
+				kot1.setData(d);
+				kot1.przedstawSie();
 				
-				lista.dodajKota(kot);
+				lista.dodajKota(kot1);
 
 			}
 
