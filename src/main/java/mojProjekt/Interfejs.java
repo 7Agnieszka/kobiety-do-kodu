@@ -43,13 +43,13 @@ public class Interfejs {
 			System.out.println("2 Wybierz kota z listy");
 			System.out.println("x zakoñcz program");
 
-			w = sc.next();
+			w = sc.nextLine();
 
 			if (w.equals("1")) {
 				obiekt.komunikuj("Podaj imie kota");
-				imie = sc.next();
+				imie = sc.nextLine();
 				obiekt.komunikuj("Podaj imie opiekuna kota");
-				opiekun = sc.next();
+				opiekun = sc.nextLine();
 
 				do {
 					obiekt.komunikuj("Podaj wage kota");

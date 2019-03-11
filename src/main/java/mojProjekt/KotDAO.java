@@ -34,6 +34,7 @@ public class KotDAO {
 	}
 	
 	public void przedstaw(int i) {
+		
 		listaKoty.get(i).przedstawSie();
 		
 	}
